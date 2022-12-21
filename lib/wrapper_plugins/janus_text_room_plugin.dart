@@ -48,7 +48,7 @@ class JanusTextRoomPlugin extends JanusPlugin {
   ///[token] : invitation token, in case the room has an ACL; optional.<br>
   ///[history] : true|false, whether to retrieve history messages when available (default=true).<br>
   ///
-  Future<void> joinRoom(int roomId, String username,
+  Future<void> joinRoom(dynamic roomId, String username,
       {String? pin, String? display, String? token, bool? history}) async {
     if (setupDone) {
       _context._logger.info('data channel is open, now trying to join');
@@ -74,7 +74,7 @@ class JanusTextRoomPlugin extends JanusPlugin {
   /// you use a leave request to leave already joined Text Room, make sure to call [setup] before calling [leaveRoom]<br><br>
   ///[roomId] : numeric ID of the room to join.<br>
   ///
-  Future<void> leaveRoom(int roomId) async {
+  Future<void> leaveRoom(dynamic roomId) async {
     if (setupDone) {
       _context._logger.fine('trying to leave room $roomId');
       var payload = {"textroom": "leave", "room": roomId};
@@ -170,7 +170,7 @@ class JanusTextRoomPlugin extends JanusPlugin {
   ///[permanent] : true|false, whether the room should be also removed from the config file; default=false.<br>
   ///[secret] : password required to edit/destroy the room, optional.<br>
   Future<dynamic> destroyRoom(
-      {int? roomId, String? secret, bool? permanent}) async {
+      {dynamic roomId, String? secret, bool? permanent}) async {
     var payload = {
       "textroom": "destroy",
       "room": roomId,

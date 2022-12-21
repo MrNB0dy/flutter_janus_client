@@ -173,7 +173,7 @@ class JanusVideoRoom {
   bool? _playoutdelayExt;
   bool? _transportWideCcExt;
 
-  int? get room => _room;
+  dynamic get room => _room;
   String? get description => _description;
   bool? get pinRequired => _pinRequired;
   bool? get isPrivate => _isPrivate;

@@ -8,7 +8,7 @@ part of janus_client;
 
 class JanusTextRoom {
   JanusTextRoom({
-    int? room,
+    dynamic room,
     String? description,
     bool? pinRequired,
     int? numParticipants,
@@ -36,7 +36,7 @@ class JanusTextRoom {
   int? _history;
 
   JanusTextRoom copyWith({
-    int? room,
+    dynamic room,
     String? description,
     bool? pinRequired,
     int? numParticipants,
