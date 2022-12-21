@@ -98,7 +98,7 @@ class JanusVideoRoomPlugin extends JanusPlugin {
         data['janus'] == 'success' &&
         data.containsKey('plugindata')) {
       var dat = data['plugindata']['data'];
-      return dat;
+      return fromJson(dat);
     } else {
       return null;
     }
@@ -291,7 +291,8 @@ class JanusVideoRoomPlugin extends JanusPlugin {
               VideoRoomJoinedEvent.fromJson(typedEvent.event.plugindata?.data);
           _typedMessagesSink?.add(typedEvent);
         } else if (typedEvent.event.plugindata?.data['videoroom'] == 'event' &&
-            typedEvent.event.plugindata?.data['unpublished'] != null&&typedEvent.event.plugindata?.data['unpublished'] is int) {
+            typedEvent.event.plugindata?.data['unpublished'] != null &&
+            typedEvent.event.plugindata?.data['unpublished'] is int) {
           typedEvent.event.plugindata?.data =
               VideoRoomUnPublishedEvent.fromJson(
                   typedEvent.event.plugindata?.data);
