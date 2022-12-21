@@ -46,7 +46,7 @@ class Participants {
     publisher = json['publisher'];
     talking = json['talking'];
   }
-  int? id;
+  dynamic id;
   String? display;
   String? publisher;
   bool? talking;
