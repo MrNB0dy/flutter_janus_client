@@ -316,8 +316,7 @@ class JanusVideoRoomPlugin extends JanusPlugin {
                   typedEvent.event.plugindata?.data);
           _typedMessagesSink?.add(typedEvent);
         } else if (typedEvent.event.plugindata?.data['videoroom'] == 'event' &&
-            typedEvent.event.plugindata?.data['leaving'] != null &&
-            typedEvent.event.plugindata?.data['leaving'].runtimeType == int) {
+            typedEvent.event.plugindata?.data['leaving'] != null) {
           typedEvent.event.plugindata?.data =
               VideoRoomLeavingEvent.fromJson(typedEvent.event.plugindata?.data);
           _typedMessagesSink?.add(typedEvent);

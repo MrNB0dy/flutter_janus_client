@@ -15,7 +15,7 @@ class VideoRoomLeavingEvent extends VideoRoomEvent {
     room = json['room'];
     leaving = json['leaving'];
   }
-  int? leaving;
+  String? leaving;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
