@@ -333,6 +333,15 @@ class JanusVideoRoomPlugin extends JanusPlugin {
                     null)) {
           _typedMessagesSink
               ?.addError(JanusError.fromMap(typedEvent.event.plugindata?.data));
+        } else if (typedEvent.event.plugindata?.data['videoroom'] == 'event' &&
+            typedEvent.event.plugindata?.data['joining'] != null) {
+          typedEvent.event.plugindata?.data =
+              VideoRoomJoiningEvent.fromJson(typedEvent.event.plugindata?.data);
+          _typedMessagesSink?.add(typedEvent);
+        } else {
+          log(typedEvent.toString(),
+              name:
+                  "EVENTO JANUS NON GESTITO"); //TODO: VERIFICARE EVENTI MANCANTI
         }
       });
     }

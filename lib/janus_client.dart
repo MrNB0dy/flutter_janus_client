@@ -63,6 +63,8 @@ part './interfaces/video_room/events/video_room_new_publisher_event.dart';
 
 part './interfaces/video_room/events/video_room_event.dart';
 
+part './interfaces/video_room/events/video_room_joining_event.dart';
+
 part './interfaces/video_call/events/video_call_accepted_event.dart';
 
 part './interfaces/video_call/events/video_call_calling_event.dart';
